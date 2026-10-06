@@ -23,7 +23,8 @@
                     new FornecedorService().ExecutarMenu();
                     break;
                 
-                case 3:
+                case 3: Console.Clear();
+                    new ProdutoService().ExecutarMenu();
                     break;
                 
                 case 0:
