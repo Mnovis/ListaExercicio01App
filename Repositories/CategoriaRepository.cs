@@ -50,7 +50,7 @@ namespace ListaExercicio01App.Repositories
             }
         }
 
-        public List<Categoria> ObterTodos()
+        public List<Categoria> ObterTodasCategorias()
         {
             using (var connection = new SqlConnection(_connectionString))
             {
