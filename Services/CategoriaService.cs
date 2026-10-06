@@ -17,7 +17,7 @@ namespace ListaExercicio01App.Services
             Console.WriteLine("(5) Voltar");
 
             Console.Write("Informe a opção desejada:");
-            var opcao = int.Parse(Console.ReadLine() ?? string.Empty);
+            int.TryParse(Console.ReadLine(), out var opcao);
 
             switch (opcao)
             {

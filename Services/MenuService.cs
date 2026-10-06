@@ -19,7 +19,8 @@
                     new CategoriaService().ExecutarMenu();
                     break;
                 
-                case 2:
+                case 2: Console.Clear();
+                    new FornecedorService().ExecutarMenu();
                     break;
                 
                 case 3:
