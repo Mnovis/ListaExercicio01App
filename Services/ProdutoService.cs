@@ -241,6 +241,27 @@ namespace ListaExercicio01App.Services
             }
         }
 
+        private void Consultar()
+        {
+            Console.WriteLine("\nConsulta de Produtos\n");
+
+            var produtoRepository = new ProdutoRepository();
+            var produtos = produtoRepository.ObterTodosProdutos();
+
+            if (produtos.Count == 0)
+            {
+                Console.WriteLine("Nenhum Produto Cadastrado");
+                return;
+            }
+
+            foreach (var produto in produtos)
+            {
+                Console.WriteLine($"Nome: {produto.Nome}, Preço: {produto.Preco:C}, Quantidade: {produto.Quantidade}, " +
+                                  $"Data: {produto.DataCompra:dd/MM/yyyy}, Fornecedor: {produto.Fornecedor?.Nome}, " +
+                                  $"Categoria: {produto.Categoria?.Descricao}");
+            }
+        }
+
         private void Exportar()
         {
             Console.WriteLine("\nExportar Produtos\n");
