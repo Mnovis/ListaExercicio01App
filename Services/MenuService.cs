@@ -1,10 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ListaExercicio01App.Services
+﻿namespace ListaExercicio01App.Services
 {
-    internal class MenuService
+    public class MenuService
     {
+        public void ExecutarMenuPrincipal()
+        {
+            Console.WriteLine("\nMenu Principal\n");
+            Console.WriteLine("(1) Categorias");
+            Console.WriteLine("(2) Fornecedores");
+            Console.WriteLine("(3) Produtos");
+            Console.WriteLine("(0) Sair");
+
+            Console.Write("Informe a opção desejada:");
+            var opcao = int.Parse(Console.ReadLine() ?? string.Empty);
+
+            switch (opcao)
+            {
+                case 1: Console.Clear();
+                    new CategoriaService().ExecutarMenu();
+                    break;
+                
+                case 2:
+                    break;
+                
+                case 3:
+                    break;
+                
+                case 0:
+                    Console.WriteLine("\nFim do Programa!");
+                    break;
+                
+                default:
+                    Console.WriteLine("\nOpção Inválida!");
+                    break;
+            }
+
+            if (opcao != 0)
+            {
+                Console.Clear();
+                ExecutarMenuPrincipal();
+            }
+        }
     }
 }
