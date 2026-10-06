@@ -7,8 +7,9 @@ namespace ListaExercicio01App.Entities
         public Guid IdFornecedor { get; set; } = Guid.NewGuid();
 
         [Required(ErrorMessage = "O {0} é obrigatório")]
-        [MaxLength(150, ErrorMessage = "O Nome deve ter no máximo {1}")]
-        [MinLength(6, ErrorMessage = "O Nome deve ter no mínimo {1}")]
+        [RegularExpression("^[\\p{L}\\s]+$", ErrorMessage = "O campo {0} aceita somente letras e espaços")]
+        [MaxLength(150, ErrorMessage = "O Nome deve ter no máximo {1} caracteres")]
+        [MinLength(6, ErrorMessage = "O Nome deve ter no mínimo {1} caracteres")]
         public string Nome { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "O {0} é obrigatório")]

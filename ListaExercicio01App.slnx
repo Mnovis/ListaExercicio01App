@@ -1,3 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="docker-compose.yml" />
+    <File Path="scripts.sql" />
+  </Folder>
   <Project Path="ListaExercicio01App.csproj" />
 </Solution>

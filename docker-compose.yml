@@ -1,0 +1,47 @@
+services:
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: projeto01-sqlserver
+
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Coti@2026"
+
+    ports:
+      - "1435:1433"
+
+    volumes:
+      - projeto01_sqlserver_data:/var/opt/mssql
+
+    networks:
+      - projeto01-network
+
+    restart: unless-stopped
+
+
+  adminer:
+    image: adminer:latest
+    container_name: projeto01-adminer
+
+    ports:
+      - "5053:8080"
+
+    depends_on:
+      - sqlserver
+
+    networks:
+      - projeto01-network
+
+    restart: unless-stopped
+
+
+volumes:
+
+  projeto01_sqlserver_data:
+
+
+networks:
+
+  projeto01-network:
+    driver: bridge
